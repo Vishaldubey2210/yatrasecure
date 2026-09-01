@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: yatrasecure-dev-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgrespassword
+      POSTGRES_DB: yatrasecure
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata_dev:/var/lib/postgresql/data
+    networks:
+      - yatrasecure-net
+
+  redis:
+    image: redis:7-alpine
+    container_name: yatrasecure-dev-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redisdata_dev:/data
+    networks:
+      - yatrasecure-net
+
+  mongodb:
+    image: mongo:7-jammy
+    container_name: yatrasecure-dev-mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodata_dev:/data/db
+    networks:
+      - yatrasecure-net
+
+volumes:
+  pgdata_dev:
+  redisdata_dev:
+  mongodata_dev:
+
+networks:
+  yatrasecure-net:
+    driver: bridge
