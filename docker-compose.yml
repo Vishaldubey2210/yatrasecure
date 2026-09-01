@@ -1,0 +1,86 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: yatrasecure-postgres
+    restart: always
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-securepassword123}
+      POSTGRES_DB: ${POSTGRES_DB:-yatrasecure}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - yatrasecure-network
+
+  redis:
+    image: redis:7-alpine
+    container_name: yatrasecure-redis
+    restart: always
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - yatrasecure-network
+
+  api:
+    build:
+      context: ./yatrasecure-api
+      dockerfile: Dockerfile
+    container_name: yatrasecure-api
+    restart: always
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      NODE_ENV: production
+      PORT: 5000
+      DATABASE_URL: postgresql://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-securepassword123}@postgres:5432/${POSTGRES_DB:-yatrasecure}?schema=public
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      JWT_SECRET: ${JWT_SECRET:-supersecretjwtkey987654321}
+    ports:
+      - "5000:5000"
+    networks:
+      - yatrasecure-network
+
+  web:
+    build:
+      context: ./yatrasecure-web
+      dockerfile: Dockerfile
+    container_name: yatrasecure-web
+    restart: always
+    depends_on:
+      - api
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      NEXT_PUBLIC_API_URL: http://api:5000
+    ports:
+      - "3000:3000"
+    networks:
+      - yatrasecure-network
+
+volumes:
+  postgres_data:
+  redis_data:
+
+networks:
+  yatrasecure-network:
+    driver: bridge
