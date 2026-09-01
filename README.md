@@ -1,497 +1,84 @@
-﻿<div align="center">
+# 🌍 YatraSecure - Smart, Safe & Collaborative Travel Platform
 
-<img src="https://img.shields.io/badge/YatraSecure-Safe%20Travel%20Platform-6C47FF?style=for-the-badge&logo=shield&logoColor=white" alt="YatraSecure Banner"/>
+[![CI Pipeline](https://github.com/Vishaldubey2210/YatraSecure/actions/workflows/ci.yml/badge.svg)](https://github.com/Vishaldubey2210/YatraSecure/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)](https://nextjs.org/)
+[![NestJS](https://img.shields.io/badge/NestJS-11-red?logo=nestjs)](https://nestjs.com/)
+[![Prisma](https://img.shields.io/badge/Prisma-5-blue?logo=prisma)](https://prisma.io/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.7-blue?logo=typescript)](https://www.typescriptlang.org/)
 
-# 🛡️ YatraSecure
-
-### *Travel Safe. Travel Together.*
-
-**India's safest group travel platform** — connecting verified travelers with real-time safety scores, transparent expense tracking, and 24/7 emergency support.
-
-[![Live Demo](https://img.shields.io/badge/🌐%20Live%20Demo-yatrasecure.vercel.app-6C47FF?style=for-the-badge)](https://yatrasecure-root.vercel.app/)
-[![NestJS](https://img.shields.io/badge/NestJS-11.x-E0234E?style=for-the-badge&logo=nestjs&logoColor=white)](https://nestjs.com/)
-[![Next.js](https://img.shields.io/badge/Next.js-16.x-000000?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
-[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-336791?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
-[![MongoDB](https://img.shields.io/badge/MongoDB-Chat%20DB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Prisma](https://img.shields.io/badge/Prisma-ORM-2D3748?style=for-the-badge&logo=prisma&logoColor=white)](https://www.prisma.io/)
-
-</div>
+**YatraSecure** is an enterprise-grade, safety-first collaborative travel platform designed for modern solo travelers, backpackers, and travel groups. It combines real-time safety distress beacons, AI itinerary generation, Splitwise-style debt simplification, interactive Leaflet live maps, and community matchmaking into a unified full-stack application.
 
 ---
 
-## 📸 Screenshots
+## 🌟 Key Features
 
-<div align="center">
-
-### 🏠 Landing Page
-![YatraSecure Landing Page](Screenshot%20(354).png)
-
-### 🔐 Login Page
-![YatraSecure Login](Screenshot%20(355).png)
-
-### 📝 Sign Up Page
-![YatraSecure Signup](Screenshot%20(356).png)
-
-</div>
+- 🛡️ **Emergency SOS & Safety Beacon**: Instant distress broadcasting with real-time GPS coordinates, siren alert, and emergency helpline directory.
+- 💸 **Smart Splitwise Expense Optimizer**: Graph-reduction debt simplification algorithm minimizing group transactions to $N-1$ transfers.
+- 🤖 **AI Travel Guide & Itinerary Generator**: LLaMA 3.3 powered custom day-by-day itineraries, climate advisory, and hidden gem recommendations.
+- 🗺️ **Interactive Live Trip Maps**: Real-time traveler positioning and route planning with Leaflet.
+- 🎒 **Travel Toolkit**: Dynamic packing list generator, multi-currency converter, carbon footprint calculator, and multilingual travel phrasebook.
+- 📱 **Progressive Web App (PWA)**: Complete offline caching, offline emergency handbook, and responsive mobile-first UI.
 
 ---
 
-## 🌟 Overview
+## 🏗️ Tech Stack
 
-**YatraSecure** is a full-stack group travel platform built for the modern Indian traveler. It solves the biggest pain points of group travel — trust, safety, expenses, and coordination — all in one secure platform.
+### Frontend (`yatrasecure-web`)
+- **Framework**: Next.js 16 (App Router) & React 19
+- **Styling**: TailwindCSS 4, Framer Motion
+- **Maps & Charts**: Leaflet, React-Leaflet, Recharts
+- **Icons & UI**: Lucide Icons, React Hot Toast
 
-> *"Join verified travel groups with real-time safety scores, transparent expense tracking, and 24/7 emergency support."*
-
-Whether you're a solo traveler looking for verified companions or an organizer managing a group trip, YatraSecure has everything you need.
-
----
-
-## ✨ Key Features
-
-### 🔒 Security & Trust
-- **Aadhar-backed ID Verification** — Every user is verified before joining any trip
-- **Real-time Safety Scores** — 98.7% safety score system with live monitoring
-- **JWT Authentication** with httpOnly cookies & token rotation
-- **Email Verification** with secure hashed tokens (24-hour expiry)
-- **bcrypt Password Hashing** with industry-standard salt rounds
-- **Rate Limiting** (100 req/min per IP) via NestJS Throttler
-
-### 🗺️ Trip Management
-- **Create & Manage Trips** with complete itinerary support
-- **Public & Private Trips** — Private trips with unique invite codes
-- **Join Request System** — Admins approve/reject with email notifications
-- **AI-powered Matchmaking** — Find compatible travel companions
-- **Trip Categories** — Student trips, MNC Employees, Family, etc.
-- **Interactive Maps** via Leaflet.js
-
-### 💬 Real-time Communication
-- **Live Group Chat** powered by Socket.IO WebSockets
-- **MongoDB-backed** message storage for fast chat retrieval
-- **Typing indicators** and real-time message delivery
-
-### 💰 Wallet & Expense Tracking
-- **Group Wallet** for each trip
-- **Transparent Expense Splitting** — Equal or custom splits
-- **Transaction History** with full audit trail
-- **Budget Tracking** — See collected vs. spent amounts in real-time
-- **Visual Charts** via Recharts
-
-### 👥 Social Features
-- **Follow/Unfollow** travelers
-- **Reputation Score System** — Build trust over time
-- **Trip Photo Gallery** with likes
-- **User Profiles** — Travel style, interests, travel personality
-- **Emergency Contacts** management
-
-### 📧 Automated Email System
-- Welcome emails on registration
-- Email verification links
-- Join request notifications (accepted/rejected)
-- Password reset emails
-- **Handlebars templating** for beautiful HTML emails
-
-### 📋 Trip Checklist
-- Collaborative trip checklists
-- Track who completed each item
-- Real-time updates for all members
+### Backend (`yatrasecure-api`)
+- **Framework**: NestJS 11 (Node.js & Express)
+- **Database & ORM**: PostgreSQL with Prisma ORM, MongoDB for chat logs
+- **Real-Time**: Socket.IO WebSockets Gateway
+- **Auth**: JWT with HttpOnly Secure Cookies & Refresh Token Rotation
+- **AI**: Groq SDK (LLaMA 3.3 70B)
 
 ---
 
-## 🏗️ Architecture
-
-```
-YatraSecure/
-├── 🖥️  yatrasecure-web/          # Next.js 16 Frontend
-│   ├── app/
-│   │   ├── (auth)/               # Login, Signup, Verify Email
-│   │   │   ├── login/
-│   │   │   ├── signup/
-│   │   │   ├── forgot-password/
-│   │   │   └── verify-email/
-│   │   ├── (dashboard)/          # Protected Routes
-│   │   │   ├── dashboard/        # Main dashboard
-│   │   │   ├── trips/            # Trip listing & details
-│   │   │   │   └── [id]/
-│   │   │   │       ├── chat/     # Real-time chat
-│   │   │   │       ├── wallet/   # Trip expenses
-│   │   │   │       ├── admin/    # Trip admin panel
-│   │   │   │       └── edit/     # Edit trip
-│   │   │   └── profile/          # User profile
-│   │   └── lib/                  # API utilities
-│   └── components/               # Reusable UI components
-│
-└── ⚙️  yatrasecure-api/          # NestJS 11 Backend
-    ├── src/
-    │   ├── auth/                 # JWT Authentication
-    │   ├── users/                # User management
-    │   ├── trips/                # Trip CRUD
-    │   ├── join-requests/        # Trip join system
-    │   ├── members/              # Trip membership
-    │   ├── chat/                 # WebSocket chat (MongoDB)
-    │   ├── wallet/               # Trip wallet
-    │   ├── expenses/             # Expense splitting
-    │   ├── notifications/        # Real-time notifications
-    │   ├── social/               # Follow system
-    │   ├── safety/               # Safety module
-    │   ├── upload/               # Profile photo upload
-    │   ├── email/                # Email service (Nodemailer)
-    │   └── common/
-    │       ├── matchmaking/      # AI travel matchmaking
-    │       └── logger/           # Winston logging
-    └── prisma/
-        └── schema.prisma         # Database schema
-```
-
----
-
-## 🛠️ Tech Stack
-
-### Frontend
-| Technology | Version | Purpose |
-|-----------|---------|---------|
-| **Next.js** | 16.1.6 | React framework with App Router |
-| **React** | 19.2.3 | UI library |
-| **TypeScript** | ^5 | Type safety |
-| **Tailwind CSS** | ^4 | Utility-first styling |
-| **Framer Motion** | ^12 | Animations |
-| **Socket.IO Client** | ^4.8.3 | Real-time chat |
-| **Recharts** | ^3.8 | Data visualization |
-| **React Leaflet** | ^5.0 | Interactive maps |
-| **Lucide React** | ^0.575 | Icon library |
-| **React Hot Toast** | ^2.6 | Toast notifications |
-
-### Backend
-| Technology | Version | Purpose |
-|-----------|---------|---------|
-| **NestJS** | ^11 | Node.js framework |
-| **TypeScript** | ^5.7 | Type safety |
-| **Prisma** | 5.22.0 | PostgreSQL ORM |
-| **Mongoose** | ^9.1.6 | MongoDB ODM (Chat) |
-| **Socket.IO** | ^4.8.3 | WebSocket server |
-| **JWT** | ^11 | Authentication |
-| **bcrypt** | ^6.0 | Password hashing |
-| **Nodemailer** | ^8.0.1 | Email service |
-| **Handlebars** | ^4.7.8 | Email templates |
-| **Multer** | ^2.0.2 | File uploads |
-| **Winston** | ^3.19 | Logging |
-| **Groq SDK** | ^1.1.1 | AI matchmaking |
-
-### Databases
-| Database | Purpose |
-|---------|---------|
-| **PostgreSQL** | Primary database (users, trips, expenses) |
-| **MongoDB** | Chat messages storage |
-
----
-
-## 🗄️ Database Schema
-
-```
-Users ──────────────── Trips
-  │                      │
-  ├── TripMembers ────────┤
-  ├── JoinRequests ───────┤
-  ├── Transactions        │
-  │                    Wallets
-  ├── Notifications       │
-  │                    Expenses ── ExpenseParticipants
-  ├── Photos ─────────────┤
-  ├── PhotoLikes          │
-  ├── Follow              │
-  └── ChecklistItems ─────┘
-```
-
-**Key Models:**
-- `User` — Full profile with travel preferences, reputation score, verification status
-- `Trip` — Public/private trips with invite codes, itinerary, budget
-- `Wallet` — Per-trip financial management with transactions
-- `Expense` — Detailed expense tracking with flexible splitting
-- `JoinRequest` — Trip membership workflow with status tracking
-- `Follow` — Social graph between travelers
-- `Photo` — Trip photo gallery with likes
-
----
-
-## 🚀 Getting Started
+## 🚀 Quick Start
 
 ### Prerequisites
+- Node.js >= 20.x
+- Docker & Docker Compose
+- PostgreSQL 16+ & MongoDB
 
-- **Node.js** v18+
-- **npm** or **pnpm**
-- **PostgreSQL** v14+
-- **MongoDB** (local or Atlas)
-- **Git**
-
-### Installation
-
-**1. Clone the repository**
+### 1. Launch with Docker Compose
 ```bash
 git clone https://github.com/Vishaldubey2210/YatraSecure.git
 cd YatraSecure
+docker-compose up -d --build
 ```
+Access Frontend at `http://localhost:3000` and API at `http://localhost:5000`.
 
----
-
-### ⚙️ Backend Setup (`yatrasecure-api`)
-
-**2. Install dependencies**
+### 2. Manual Development Setup
 ```bash
+# Backend Setup
 cd yatrasecure-api
 npm install
-```
-
-**3. Configure environment variables**
-
-Create a `.env` file in `yatrasecure-api/`:
-```env
-# Database
-DATABASE_URL="postgresql://username:password@localhost:5432/yatrasecure"
-MONGODB_URI="mongodb://localhost:27017/yatrasecure"
-
-# JWT Secrets (use strong random strings)
-JWT_SECRET="your-super-secret-jwt-key-min-32-chars"
-JWT_REFRESH_SECRET="your-super-secret-refresh-key-min-32-chars"
-
-# App
-NODE_ENV="development"
-PORT=3001
-COOKIE_DOMAIN="localhost"
-
-# Email (SMTP)
-MAIL_HOST="smtp.gmail.com"
-MAIL_PORT=587
-MAIL_USER="your-email@gmail.com"
-MAIL_PASS="your-app-password"
-MAIL_FROM="YatraSecure <noreply@yatrasecure.com>"
-
-# Frontend URL (for email links)
-FRONTEND_URL="http://localhost:3000"
-
-# AI (Groq)
-GROQ_API_KEY="your-groq-api-key"
-```
-
-**4. Setup PostgreSQL Database**
-```bash
-# Create database
-psql -U postgres
-CREATE DATABASE yatrasecure;
-\q
-
-# Run Prisma migrations
-npx prisma migrate dev --name init
-
-# Generate Prisma client
 npx prisma generate
-```
-
-**5. Start the API server**
-```bash
-# Development
 npm run start:dev
 
-# Production
-npm run build
-npm run start:prod
-```
-
-The API will be running at `http://localhost:3001`
-
----
-
-### 🌐 Frontend Setup (`yatrasecure-web`)
-
-**6. Install dependencies**
-```bash
+# Frontend Setup (in a separate terminal)
 cd ../yatrasecure-web
 npm install
-```
-
-**7. Configure environment variables**
-
-Create a `.env.local` file in `yatrasecure-web/`:
-```env
-NEXT_PUBLIC_API_URL="http://localhost:3001"
-NEXT_PUBLIC_WS_URL="http://localhost:3001"
-```
-
-**8. Start the development server**
-```bash
 npm run dev
 ```
 
-The web app will be running at `http://localhost:3000`
-
 ---
 
-## 📡 API Endpoints
-
-### Authentication
-```
-POST   /api/auth/signup              # Register new user
-POST   /api/auth/login               # Login
-POST   /api/auth/logout              # Logout
-POST   /api/auth/refresh             # Refresh access token
-POST   /api/auth/forgot-password     # Request password reset
-POST   /api/auth/reset-password      # Reset password with token
-POST   /api/auth/verify-email        # Verify email address
-POST   /api/auth/resend-verification # Resend verification email
-```
-
-### Users & Profiles
-```
-GET    /api/users/me                 # Get current user profile
-PATCH  /api/users/me                 # Update profile
-POST   /api/upload/profile-image     # Upload profile photo
-```
-
-### Trips
-```
-GET    /api/trips                    # List all public trips
-POST   /api/trips                    # Create a new trip
-GET    /api/trips/:id                # Get trip details
-PATCH  /api/trips/:id                # Update trip
-DELETE /api/trips/:id                # Delete trip
-```
-
-### Join Requests
-```
-POST   /api/join-requests            # Request to join a trip
-GET    /api/join-requests/trip/:id   # Get trip join requests
-PATCH  /api/join-requests/:id        # Accept/Reject request
-```
-
-### Wallet & Expenses
-```
-GET    /api/wallet/:tripId           # Get trip wallet
-POST   /api/wallet/:tripId/deposit   # Add funds to wallet
-POST   /api/expenses                 # Log an expense
-GET    /api/expenses/trip/:tripId    # Get trip expenses
-```
-
-### Chat (WebSocket)
-```
-WS     /chat                         # Connect to chat namespace
-EMIT   send_message                  # Send a message
-ON     receive_message               # Receive messages
-```
-
-### Notifications
-```
-GET    /api/notifications            # Get user notifications
-PATCH  /api/notifications/:id/read   # Mark as read
-PATCH  /api/notifications/read-all   # Mark all as read
-```
-
----
-
-## 🔐 Security Features
-
-| Feature | Implementation |
-|---------|---------------|
-| **Password Hashing** | bcrypt with 10 salt rounds |
-| **JWT Access Token** | 15-minute expiry, returned in response body |
-| **JWT Refresh Token** | 30-day expiry, stored in httpOnly cookie only |
-| **Token Rotation** | New refresh token issued on every refresh |
-| **Email Verification** | Hashed tokens with 24-hour expiry |
-| **CSRF Protection** | SameSite cookie policy |
-| **Rate Limiting** | 100 requests/minute per IP |
-| **SQL Injection** | Prevented via Prisma ORM parameterized queries |
-| **XSS Protection** | httpOnly cookies for sensitive tokens |
-
----
-
-## 🧪 Running Tests
-
-```bash
-# Unit tests
-cd yatrasecure-api
-npm run test
-
-# Test coverage report
-npm run test:cov
-
-# End-to-end tests
-npm run test:e2e
-
-# Watch mode
-npm run test:watch
-```
-
----
-
-## 📦 Deployment
-
-### Frontend (Vercel)
-```bash
-cd yatrasecure-web
-npm run build
-# Deploy to Vercel via CLI or GitHub integration
-```
-
-### Backend
-```bash
-cd yatrasecure-api
-npm run build
-npm run start:prod
-```
-
-Set environment variables in your hosting provider (Railway, Render, etc.)
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Please follow these steps:
-
-1. **Fork** the repository
-2. **Create** a feature branch: `git checkout -b feature/amazing-feature`
-3. **Commit** your changes: `git commit -m 'feat: add amazing feature'`
-4. **Push** to the branch: `git push origin feature/amazing-feature`
-5. **Open** a Pull Request
-
-### Commit Convention
-We follow [Conventional Commits](https://www.conventionalcommits.org/):
-- `feat:` — New feature
-- `fix:` — Bug fix
-- `docs:` — Documentation changes
-- `chore:` — Build process or tooling changes
-- `refactor:` — Code refactoring
+## 📖 Documentation
+- [System Architecture](docs/ARCHITECTURE.md)
+- [REST API Specification](docs/API_DOCUMENTATION.md)
+- [WebSocket Protocol](docs/WEBSOCKETS.md)
+- [Safety Index Algorithm](docs/SAFETY_ALGORITHM.md)
+- [Expense Debt Simplification](docs/EXPENSE_ALGORITHM.md)
+- [Deployment Guide](docs/DEPLOYMENT.md)
 
 ---
 
 ## 📄 License
-
-This project is licensed under the **MIT License**.
-
----
-
-## 👤 Author
-
-**Vishal Dubey**
-
-[![GitHub](https://img.shields.io/badge/GitHub-Vishaldubey2210-181717?style=for-the-badge&logo=github)](https://github.com/Vishaldubey2210)
-
----
-
-## 🌐 Links
-
-| Resource | URL |
-|---------|-----|
-| 🌍 **Live App** | [yatrasecure-root.vercel.app](https://yatrasecure-root.vercel.app/) |
-| 📦 **Repository** | [github.com/Vishaldubey2210/YatraSecure](https://github.com/Vishaldubey2210/YatraSecure) |
-
----
-
-<div align="center">
-
-**⭐ If you found this project helpful, please give it a star!**
-
-*Built with ❤️ for safer, smarter group travel across India*
-
-[![Made with NestJS](https://img.shields.io/badge/Made%20with-NestJS-E0234E?style=flat-square&logo=nestjs)](https://nestjs.com/)
-[![Made with Next.js](https://img.shields.io/badge/Made%20with-Next.js-000000?style=flat-square&logo=next.js)](https://nextjs.org/)
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-000000?style=flat-square&logo=vercel)](https://vercel.com/)
-
-</div>
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
