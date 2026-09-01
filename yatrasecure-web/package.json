@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@fontsource/inter": "^5.2.8",
-    "@nestjs-modules/mailer": "^2.0.2",
+    "@nestjs-modules/mailer": "^2.3.7",
     "date-fns": "^4.1.0",
     "framer-motion": "^12.36.0",
     "handlebars": "^4.7.8",
