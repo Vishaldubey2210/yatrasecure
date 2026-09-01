@@ -21,7 +21,7 @@ jobs:
         uses: docker/setup-buildx-action@v3
 
       - name: Build API Docker Image
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v7
         with:
           context: ./yatrasecure-api
           file: ./yatrasecure-api/Dockerfile
@@ -29,7 +29,7 @@ jobs:
           tags: yatrasecure-api:latest
 
       - name: Build Web Docker Image
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v7
         with:
           context: ./yatrasecure-web
           file: ./yatrasecure-web/Dockerfile
